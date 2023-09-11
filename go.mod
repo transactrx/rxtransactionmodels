@@ -1,3 +1,3 @@
-module github.com/transactrx/rxtransactionmodels/v1.0.0
+module github.com/transactrx/rxtransactionmodels
 
 go 1.21.0

@@ -2,6 +2,8 @@ package transaction
 
 import "time"
 
+//some comment.
+
 const (
 	SEGMENT_SEPARATOR = "\u001E"
 	GROUP_SEPARATOR   = "\u001D"
@@ -10,36 +12,36 @@ const (
 )
 
 type Claim struct {
-	TransmissionID  string        
-	Elapsed         string        
-	From            string        
-	RouteAddress    string        
-	RouteName       string        
-	Created         string        
-	RxNumbers       []interface{} 
-	Ncpdp           string        
-	CallOrigin      int           
+	TransmissionID  string
+	Elapsed         string
+	From            string
+	RouteAddress    string
+	RouteName       string
+	Created         string
+	RxNumbers       []interface{}
+	Ncpdp           string
+	CallOrigin      int
 	TransactionData struct {
-		NcpdpData string 
+		NcpdpData string
 	}
-	ReplyTo  string 
+	ReplyTo  string
 	TimeRcvd time.Time
 }
 type Response struct {
-	TransmissionID string        
-	Elapsed        string        
-	From           string        
-	RouteAddress   string        
-	RouteName      string        
-	Created        string        
-	RxNumbers      []interface{} 
-	Ncpdp          string        
-	CallOrigin     int           
-	ReturnCode     string        
-	StatusCode     string        
+	TransmissionID string
+	Elapsed        string
+	From           string
+	RouteAddress   string
+	RouteName      string
+	Created        string
+	RxNumbers      []interface{}
+	Ncpdp          string
+	CallOrigin     int
+	ReturnCode     string
+	StatusCode     string
 
 	TransactionData struct {
-		NcpdpData string 
+		NcpdpData string
 	}
 	//ErrorData *ErrorCode
 }

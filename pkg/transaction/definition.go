@@ -11,7 +11,7 @@ const (
 	ETX               = "\u0003"
 )
 
-type Claim struct {
+type Claim structs {
 	TransmissionID  string
 	Elapsed         string
 	From            string

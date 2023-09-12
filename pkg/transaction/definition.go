@@ -54,6 +54,6 @@ type Response struct {
 	ContextData    string `json:"contextData"`
 	TransactionData struct {
 		NcpdpData string `json:"ncpdpData"`
-	}
+	} `json:"transactionData"`
 	ErrorData *ErrorInfo `json:"errorData"`
 }

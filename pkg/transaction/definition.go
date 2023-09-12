@@ -12,47 +12,47 @@ const (
 )
 
 type Claim struct {
-	TransmissionId string
-	InstanceId      string 
-	TenantId        string 
-	UnitName        string 
-	ClientId 		string 
+	transmissionId string
+	instanceId     string
+	tenantId       string
+	unitName       string
+	clientId       string
 
-	Elapsed         string
-	From            string
-	RouteAddress    string
-	RouteName       string
-	Created         string
-	RxNumbers       []interface{}
-	Ncpdp           string
-	CallOrigin      int
-	TransactionData struct {
-		NcpdpData string
+	elapsed         string
+	from            string
+	routeAddress    string
+	routeName       string
+	created         string
+	rxNumbers       []interface{}
+	ncpdp           string
+	callOrigin      int
+	transactionData struct {
+		ncpdpData string
 	}
-	ReplyTo  string
-	TimeRcvd time.Time
+	replyTo  string
+	timeRcvd time.Time
 }
 type Response struct {
-	TransmissionId string
-	InstanceId      string 
-	TenantId        string 
-	UnitName        string 
-	ClientId 		string 
-	Elapsed        string
-	From           string
-	RouteAddress   string
-	RouteName      string
-	Created        string
-	RxNumbers      []interface{}
-	Ncpdp          string
-	CallOrigin     int
-	ReturnCode     string
-	StatusCode     string
-	Header         string 
-	ContextData    string
+	transmissionId string
+	instanceId     string
+	tenantId       string
+	unitName       string
+	clientId       string
+	elapsed        string
+	from           string
+	routeAddress   string
+	routeName      string
+	created        string
+	rxNumbers      []interface{}
+	ncpdp          string
+	callOrigin     int
+	returnCode     string
+	statusCode     string
+	reader         string
+	contextData    string
 
-	TransactionData struct {
-		NcpdpData string
+	transactionData struct {
+		ncpdpData string
 	}
-	ErrorData *ErrorInfo
+	errorData *ErrorInfo
 }

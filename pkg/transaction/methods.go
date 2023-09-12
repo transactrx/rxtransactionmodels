@@ -9,7 +9,8 @@ import (
 
 func (response *Response) BuildResponseSuccess(claim Claim, startTime time.Time, ncpdpResponse []byte) {
 
-	response.TransmissionID = claim.TransmissionID
+	response.TransmissionId = claim.TransmissionId
+	response.InstanceId = claim.InstanceId
 	response.Elapsed = fmt.Sprintf("%f", (time.Now().Sub(startTime).Seconds()))
 	now := time.Now().UTC()
 	formattedTime := now.Format("2006-01-02T15:04:05.9999999Z")
@@ -27,7 +28,8 @@ func (response *Response) BuildResponseSuccess(claim Claim, startTime time.Time,
 
 func (response *Response) BuildResponseError(claim Claim, errorCode ErrorInfo, startTime time.Time) {
 
-	response.TransmissionID = claim.TransmissionID
+	response.TransmissionId = claim.TransmissionId
+	response.InstanceId = claim.InstanceId
 	response.Elapsed = fmt.Sprintf("%f", (time.Now().Sub(startTime).Seconds()))
 	now := time.Now().UTC()
 	formattedTime := now.Format("2006-01-02T15:04:05.9999999Z")
@@ -71,4 +73,3 @@ func GenerateError(responseBuffer []byte, errorCode ErrorInfo) string {
 	response += ETX
 	return response
 }
-

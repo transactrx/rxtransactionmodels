@@ -11,9 +11,9 @@ const (
 	ETX               = "\u0003"
 )
 
-
 type Claim struct {
-	TransmissionID  string
+	TransmissionId string
+	InstanceId      string 
 	Elapsed         string
 	From            string
 	RouteAddress    string
@@ -29,7 +29,8 @@ type Claim struct {
 	TimeRcvd time.Time
 }
 type Response struct {
-	TransmissionID string
+	TransmissionId string
+	InstanceId      string 
 	Elapsed        string
 	From           string
 	RouteAddress   string

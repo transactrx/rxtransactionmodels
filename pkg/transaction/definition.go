@@ -14,6 +14,10 @@ const (
 type Claim struct {
 	TransmissionId string
 	InstanceId      string 
+	TenantId        string 
+	UnitName        string 
+	ClientId 		string 
+
 	Elapsed         string
 	From            string
 	RouteAddress    string
@@ -31,6 +35,9 @@ type Claim struct {
 type Response struct {
 	TransmissionId string
 	InstanceId      string 
+	TenantId        string 
+	UnitName        string 
+	ClientId 		string 
 	Elapsed        string
 	From           string
 	RouteAddress   string
@@ -41,9 +48,11 @@ type Response struct {
 	CallOrigin     int
 	ReturnCode     string
 	StatusCode     string
+	Header         string 
+	ContextData    string
 
 	TransactionData struct {
 		NcpdpData string
 	}
-	//ErrorData *ErrorCode
+	ErrorData *ErrorInfo
 }

@@ -9,41 +9,41 @@ import (
 
 func (response *Response) BuildResponseSuccess(claim Claim, startTime time.Time, ncpdpResponse []byte) {
 
-	response.TransmissionId = claim.TransmissionId
-	response.InstanceId = claim.InstanceId
-	response.TenantId = claim.TenantId
-	response.Elapsed = fmt.Sprintf("%f", (time.Now().Sub(startTime).Seconds()))
+	response.transmissionId = claim.transmissionId
+	response.instanceId = claim.instanceId
+	response.tenantId = claim.tenantId
+	response.elapsed = fmt.Sprintf("%f", (time.Now().Sub(startTime).Seconds()))
 	now := time.Now().UTC()
 	formattedTime := now.Format("2006-01-02T15:04:05.9999999Z")
-	response.Created = formattedTime
-	response.RouteAddress = claim.RouteAddress
-	response.RouteName = claim.RouteName
-	response.RxNumbers = claim.RxNumbers
-	response.Ncpdp = claim.Ncpdp
-	response.CallOrigin = claim.CallOrigin
-	response.From, _ = os.Hostname()
-	response.ReturnCode = "1" // ok status
-	response.StatusCode = "200"
-	response.TransactionData.NcpdpData = string(ncpdpResponse)
+	response.created = formattedTime
+	response.routeAddress = claim.routeAddress
+	response.routeName = claim.routeName
+	response.rxNumbers = claim.rxNumbers
+	response.ncpdp = claim.ncpdp
+	response.callOrigin = claim.callOrigin
+	response.from, _ = os.Hostname()
+	response.returnCode = "1" // ok status
+	response.statusCode = "200"
+	response.transactionData.ncpdpData = string(ncpdpResponse)
 }
 
 func (response *Response) BuildResponseError(claim Claim, errorCode ErrorInfo, startTime time.Time) {
 
-	response.TransmissionId = claim.TransmissionId
-	response.InstanceId = claim.InstanceId
-	response.Elapsed = fmt.Sprintf("%f", (time.Now().Sub(startTime).Seconds()))
+	response.transmissionId = claim.transmissionId
+	response.instanceId = claim.instanceId
+	response.elapsed = fmt.Sprintf("%f", (time.Now().Sub(startTime).Seconds()))
 	now := time.Now().UTC()
 	formattedTime := now.Format("2006-01-02T15:04:05.9999999Z")
-	response.Created = formattedTime
-	response.RouteAddress = claim.RouteAddress
-	response.RouteName = claim.RouteName
-	response.RxNumbers = claim.RxNumbers
-	response.Ncpdp = claim.Ncpdp
-	response.CallOrigin = claim.CallOrigin
-	response.From, _ = os.Hostname()
-	response.ReturnCode = "3" // failure
-	response.StatusCode = "200"
-	response.TransactionData.NcpdpData = GenerateError([]byte(claim.TransactionData.NcpdpData), errorCode)
+	response.created = formattedTime
+	response.routeAddress = claim.routeAddress
+	response.routeName = claim.routeName
+	response.rxNumbers = claim.rxNumbers
+	response.ncpdp = claim.ncpdp
+	response.callOrigin = claim.callOrigin
+	response.from, _ = os.Hostname()
+	response.returnCode = "3" // failure
+	response.statusCode = "200"
+	response.transactionData.ncpdpData = GenerateError([]byte(claim.transactionData.ncpdpData), errorCode)
 }
 
 // func GenerateError(responseBuffer []byte,errorCode string) string {

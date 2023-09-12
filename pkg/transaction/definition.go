@@ -12,47 +12,48 @@ const (
 )
 
 type Claim struct {
-	transmissionId string
-	instanceId     string
-	tenantId       string
-	unitName       string
-	clientId       string
+	TransmissionId string `json:"transmissionId"`
+	InstanceId     string `json:"instanceId"`
+	TenantId       string `json:"tenantId"`
+	UnitName       string `json:"unitName"`
+	ClientId       string `json:"clientId"`
 
-	elapsed         string
-	from            string
-	routeAddress    string
-	routeName       string
-	created         string
-	rxNumbers       []interface{}
-	ncpdp           string
-	callOrigin      int
-	transactionData struct {
-		ncpdpData string
-	}
-	replyTo  string
-	timeRcvd time.Time
+	Elapsed         string `json:"elapsed"`
+	From            string `json:"from"`
+	RouteAddress    string `json:"routeAddress"`
+	RouteName       string `json:"routeName"`
+	Created         string `json:"created"`
+	RxNumbers       []interface{} `json:"rxNumbers"`
+	Ncpdp           string `json:"ncpdp"`
+	CallOrigin      int `json:"callOrigin"`
+	TransactionData struct {
+		NcpdpData string `json:"ncpdpData"`
+	} `json:"transactionData"`
+	ReplyTo  string `json:"replyTo"`
+	TimeRcvd time.Time `json:"timeRcvd"`
 }
-type Response struct {
-	transmissionId string
-	instanceId     string
-	tenantId       string
-	unitName       string
-	clientId       string
-	elapsed        string
-	from           string
-	routeAddress   string
-	routeName      string
-	created        string
-	rxNumbers      []interface{}
-	ncpdp          string
-	callOrigin     int
-	returnCode     string
-	statusCode     string
-	reader         string
-	contextData    string
 
-	transactionData struct {
-		ncpdpData string
+
+type Response struct {
+	TransmissionId string `json:"transmissionId"`
+	InstanceId     string `json:"instanceId"`
+	TenantId       string `json:"tenantId"`
+	UnitName       string `json:"unitName"`
+	ClientId       string `json:"clientId"`
+	Elapsed        string `json:"elapsed"`
+	From           string `json:"from"`
+	RouteAddress   string `json:"routeAddress"`
+	RouteName      string `json:"routeName"`
+	Created        string `json:"created"`
+	RxNumbers      []interface{} `json:"rxNumbers"`
+	Ncpdp          string `json:"ncpdp"`
+	CallOrigin     int `json:"callOrigin"`
+	ReturnCode     string `json:"returnCode"`
+	StatusCode     string `json:"statusCode"`
+	Reader         string `json:"reader"`
+	ContextData    string `json:"contextData"`
+	TransactionData struct {
+		NcpdpData string `json:"ncpdpData"`
 	}
-	errorData *ErrorInfo
+	ErrorData *ErrorInfo `json:"errorData"`
 }

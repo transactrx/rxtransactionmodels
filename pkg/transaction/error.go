@@ -9,18 +9,19 @@ type ErrorInfo struct {
 }
 
 type ErrorCodes struct {
-	TRX00   ErrorInfo
-	TRX01   ErrorInfo
-	TRX02   ErrorInfo
-	TRX03   ErrorInfo
-	TRX04   ErrorInfo
-	TRX05   ErrorInfo
-	TRX06   ErrorInfo
-	TRX07   ErrorInfo
-	TRX08   ErrorInfo
-	TRX09   ErrorInfo
-	TRX10   ErrorInfo
-	// add more codes here 
+	TRX00 ErrorInfo
+	TRX01 ErrorInfo
+	TRX02 ErrorInfo
+	TRX03 ErrorInfo
+	TRX04 ErrorInfo
+	TRX05 ErrorInfo
+	TRX06 ErrorInfo
+	TRX07 ErrorInfo
+	TRX08 ErrorInfo
+	TRX09 ErrorInfo
+	TRX10 ErrorInfo
+	TRX11 ErrorInfo
+	// add more codes here
 	TRX9999 ErrorInfo
 }
 
@@ -105,7 +106,14 @@ var ErrorCode = ErrorCodes{
 		Code:        "TRX10",
 		Description: "This error occurs when there was an issue while sending a POST request to the endpoint.",
 		Causes:      "Possible Causes: This error can be caused by missing or insufficient authorization headers, tokens, or permissions. It may also indicate a problem on the server's side.",
-	},	
+	},
+	TRX11: ErrorInfo{
+		Message:     "Claim Request Not Found",
+		HttpCode:    "500",
+		Code:        "TRX11",
+		Description: "This error occurs when the claim request cannot be found.",
+		Causes:      "Possible Causes: Issues related to latency.",
+	},
 	TRX9999: ErrorInfo{
 		Message:     "Host Processing Error",
 		HttpCode:    "500",
@@ -114,7 +122,3 @@ var ErrorCode = ErrorCodes{
 		Causes:      "Possible Causes: ?",
 	},
 }
-
-
-
-

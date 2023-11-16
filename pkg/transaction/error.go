@@ -105,6 +105,13 @@ var ErrorCode = ErrorCodes{
 		Code:        "TRX10",
 		Description: "This error occurs when there was an issue while sending a POST request to the endpoint.",
 		Causes:      "Possible Causes: This error can be caused by missing or insufficient authorization headers, tokens, or permissions. It may also indicate a problem on the server's side.",
+	},
+	TRX11: ErrorInfo{
+		Message:     "Claim Request Not Found",
+		HttpCode:    "500",
+		Code:        "TRX11",
+		Description: "This error occurs when the claim request cannot be found.",
+		Causes:      "Possible Causes: Issues related to latency.",
 	},	
 	TRX9999: ErrorInfo{
 		Message:     "Host Processing Error",

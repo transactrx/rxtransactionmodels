@@ -31,6 +31,7 @@ type Claim struct {
 	} `json:"transactionData"`
 	ReplyTo  string    `json:"replyTo"`
 	TimeRcvd time.Time `json:"timeRcvd"`
+	Header   string    `json:"header"`
 }
 
 type Response struct {
@@ -50,7 +51,6 @@ type Response struct {
 	ReturnCode      string        `json:"returnCode"`
 	StatusCode      string        `json:"statusCode"`
 	Reader          string        `json:"reader"`
-	Header          string        `json:"header"`
 	ContextData     string        `json:"contextData"`
 	TransactionData struct {
 		NcpdpData string `json:"ncpdpData"`

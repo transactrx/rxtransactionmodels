@@ -21,6 +21,7 @@ type ErrorCodes struct {
 	TRX09 ErrorInfo
 	TRX10 ErrorInfo
 	TRX11 ErrorInfo
+	TRX12 ErrorInfo
 	// add more codes here
 	TRX9999 ErrorInfo
 }
@@ -113,6 +114,13 @@ var ErrorCode = ErrorCodes{
 		Code:        "TRX11",
 		Description: "This error occurs when the claim request cannot be found.",
 		Causes:      "Possible Causes: Issues related to latency.",
+	},
+	TRX12: ErrorInfo{
+		Message:     "TLS Handshake Failure",
+		HttpCode:    "500",
+		Code:        "TRX12",
+		Description: "This error occurs if handshake can't be completed.",
+		Causes:      "Possible Causes: Expired/Invalid certificate or other cryptographic issues.",
 	},
 	TRX9999: ErrorInfo{
 		Message:     "Host Processing Error",

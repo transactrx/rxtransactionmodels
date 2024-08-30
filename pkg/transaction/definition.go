@@ -106,13 +106,15 @@ type TransactionData struct {
 type TransactionTrip struct {
 	TransmissionId string      `json:"transmissionId"`
 	TripType       string      `json:"type"` //Tran code: B1, B2, etc.
+	Test           bool        `json:"test"`
 	Request        Transaction `json:"request"`
 	Response       Transaction `json:"response"`
 }
 
 type Transaction struct {
 	Created            string   `json:"created"`
-	TransactionType    string   `json:"type"` //Request,Response
+	TransactionType    string   `json:"type"`  //Request,Response
+	TransactionState   string   `json:"state"` //SentToThirdParty, etc.
 	RouteCode          string   `json:"routeCode"`
 	RouteAddress       string   `json:"routeAddress"`
 	ResponseStatusCode string   `json:"responseStatusCode"`

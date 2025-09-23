@@ -117,8 +117,11 @@ type Transaction struct {
 	TransactionState   string   `json:"state"` //SentToThirdParty, etc.
 	RouteCode          string   `json:"routeCode"`
 	RouteAddress       string   `json:"routeAddress"`
-	ResponseStatusCode string   `json:"responseStatusCode"`
-	RejectCodes        []string `json:"rejectCodes"`
+	ResponseStatusCode string   `json:"responseStatusCode"` //From claim response
+	RejectCodes        []string `json:"rejectCodes"`        //From claim response
+
+	AppResponseCode    string `json:"appResponseCode"`    //From middleware app
+	AppResponseMessage string `json:"appResponseMessage"` //From middleware app
 
 	NcpdpData string `json:"ncpdpData"`
 }

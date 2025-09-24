@@ -92,6 +92,9 @@ type MultiTripResponse struct {
 	ErrorData      *ErrorInfo    `json:"errorData"`
 	PpeStatus      *PpeStatus    `json:"ppeStatus"`
 
+	AppCode    string `json:"appCode"`
+	AppMessage string `json:"appMessage"`
+
 	//Final response
 	TransactionData TransactionData `json:"transactionData"`
 

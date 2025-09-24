@@ -63,8 +63,8 @@ type Response struct {
 	ErrorData *ErrorInfo `json:"errorData"`
 	PpeStatus *PpeStatus `json:"ppeStatus"`
 
-	AppCode    string `json:"appCode"`
-	AppMessage string `json:"appMessage"`
+	AppCode    string `json:"appResponseCode"`
+	AppMessage string `json:"appResponseMessage"`
 }
 
 type PpeStatus struct {
@@ -95,8 +95,8 @@ type MultiTripResponse struct {
 	ErrorData      *ErrorInfo    `json:"errorData"`
 	PpeStatus      *PpeStatus    `json:"ppeStatus"`
 
-	AppCode    string `json:"appCode"`
-	AppMessage string `json:"appMessage"`
+	AppCode    string `json:"appResponseCode"`
+	AppMessage string `json:"appResponseMessage"`
 
 	//Final response
 	TransactionData TransactionData `json:"transactionData"`
